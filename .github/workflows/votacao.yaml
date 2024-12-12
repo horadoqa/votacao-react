@@ -23,6 +23,8 @@ jobs:
 
       - name: Install dependencies for backend
         run: |
+          ls -la
+          pwd
           cd backend
           npm install
 
@@ -45,6 +47,8 @@ jobs:
 
       - name: Install dependencies for frontend
         run: |
+          ls -la
+          pwd
           cd frontend
           npm install
 
