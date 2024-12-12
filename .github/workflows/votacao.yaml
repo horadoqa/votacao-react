@@ -1,0 +1,76 @@
+name: CI/CD Votacao
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  # Job para o Backend (Node.js)
+  backend:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v4  
+
+      - name: Set up Node.js for backend
+        uses: actions/setup-node@v2
+        with:
+          node-version: '16'
+
+      - name: Install dependencies for backend
+        run: |
+          cd backend
+          npm install
+
+      - name: Run tests for backend
+        run: |
+          cd backend
+          npm test
+
+  # Job para o Frontend (React)
+  frontend:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js for frontend
+        uses: actions/setup-node@v2
+        with:
+          node-version: '16' 
+
+      - name: Install dependencies for frontend
+        run: |
+          cd frontend
+          npm install
+
+      - name: Run tests for frontend
+        run: |
+          cd frontend
+          npm test
+
+   # Job para verificar se o Backend e Frontend passaram nos testes
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js for testing
+        uses: actions/setup-node@v2
+        with:
+          node-version: '16' 
+
+      - name: Install dependencies for testing
+        run: |
+          cd backend && npm install
+          cd frontend && npm install
+
+      - name: Run tests for backend and frontend
+        run: |
+          cd backend && npm test
+          cd frontend && npm test
