@@ -1,0 +1,137 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Estilo global da página */
+body {
+  font-family: Arial, sans-serif;
+  background-color: rgb(30, 33, 34);
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; /* Evita que a bola saia da tela */
+}
+
+/* Container principal */
+.container {
+  background-color: rgb(24, 26, 27);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 400px;
+  text-align: center;
+  margin: 10px; /* Adiciona um espaço entre os containers */
+}
+
+/* Adiciona um contêiner pai para exibir os containers lado a lado */
+.container-wrapper {
+  display: flex;
+  gap: 20px; /* Adiciona espaço entre os containers */
+  flex-wrap: wrap; /* Permite que os containers se quebrem para a linha seguinte, se necessário */
+  justify-content: center; /* Alinha os containers ao centro */
+  width: 100%;
+  max-width: 1200px; /* Limita a largura total dos containers */
+  margin: 0 auto; /* Centraliza os containers na tela */
+}
+
+
+/* Estilos para a imagem */
+img {
+  width: 150px;
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+/* Título da enquete */
+h1, h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #f9f9f9;
+}
+
+/* Estilo para o formulário de votação */
+.poll-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.option {
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+  color: #4caf50;
+}
+
+input[type="radio"] {
+  margin-right: 10px;
+  width: 20px;
+  height: 20px;
+  accent-color: #4caf50;
+}
+
+label {
+  font-size: 18px;
+}
+
+/* Mensagem de agradecimento */
+.thank-you-message {
+  display: block;
+  margin-top: 20px;
+  font-size: 18px;
+  color: #4caf50;
+}
+
+/* Estilo para os resultados */
+#results-list {
+  list-style-type: none;
+  padding: 0;
+  margin-bottom: 50px; /* Adicionando espaço abaixo da lista de resultados */
+}
+  
+#results-list li {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+  
+/* Total de votos - garantimos que fique abaixo da lista */
+.total-votes, button{
+  margin-top: 20px;
+  font-size: 16px;
+  font-weight: bold;
+  background-color: #4caf50;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: default; /* Desabilita o cursor de clique */
+}
+
+button:hover {
+  background-color: #45a049;
+}
+  
+.total-votes:hover {
+  background-color: #45a049;
+}
+
+/* Carregando */
+#loading {
+  display: none;
+  color: #4caf50;
+  padding: 10px;
+}
+
+/* Resultados */
+ul {
+  list-style-type: none;
+  padding-left: 0;
+  font-size: 18px;
+  color: #4caf50;
+}
+
